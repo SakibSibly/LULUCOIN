@@ -142,6 +142,12 @@ class CustomRegister(APIView):
 #         })
 
 
+class BlockchainView(APIView):
+    def get(self, request):
+        blocks = LuluCoinBlock.objects.filter(is_valid=True).order_by("-submission_time")
+        serializer = LuluCoinBlockSerializer(blocks, many=True)
+        return Response(serializer.data)
+
 
 class TransactionView(APIView):
     def get(self, request):

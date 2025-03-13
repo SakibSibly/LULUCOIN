@@ -10,6 +10,7 @@ urlpatterns = [
     path('global-variables/', views.GlobalVariablesView.as_view(), name='global-variables-adjustments'),
     path('register/', views.CustomRegister.as_view(), name='register'),
     path('transactions/', views.TransactionView.as_view(), name="transaction-hadling"),
+    path('blockchains/', views.BlockchainView.as_view(), name='blockchains'),
     path('add-block/', views.AddBlockView.as_view(), name='add-new-block'),
     path('validate-blockchain/', views.ValidateView.as_view(), name='validate-bolckchain'),
 ]
